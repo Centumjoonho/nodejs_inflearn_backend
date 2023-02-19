@@ -1,0 +1,21 @@
+#yaml or yml 둘다 상관 없다 
+# 띄어쓰기가 매우 중요한 설정 파일 
+version: "3.7"
+# service = computer
+# 이름 아무거나 상관없어 
+# context : 파일 위치
+services:
+   my-backend:
+      build:
+          context: .
+          dockerfile: Dockerfile
+      ports:
+        - 3000:3000
+
+
+   my-database:
+      build:
+          context: .
+          dockerfile: Dockerfile.mongo
+      ports:
+        - 27017:27017
